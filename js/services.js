@@ -7,7 +7,7 @@
 
 
 // BaseURL
-BaseURL = "http://172.16.30.10/iReaderApp/www/";
+BaseURL = "http://jakichen.github.io";
 
 angular.module('iReader.services', [])
 /*!
