@@ -49,7 +49,7 @@ angular.module('iReader.controllers', [])
 .controller('magzineCtrl', function($scope,$http) {
 	$http.defaults.headers.common["X-Custom-Header"] = "Angular.js";
 	//Week Top10 Data
-	$http.get(	BaseURL + '/_service/data/category/magzine/config.json'	)
+	$http.get(	BaseURL + '/service/data/category/magzine/config.json'	)
 		 .success(function(data, status, headers, config){
 			 $scope.magzine = data;
 		 });
@@ -66,7 +66,7 @@ angular.module('iReader.controllers', [])
 	
 	$http.defaults.headers.common["X-Custom-Header"] = "Angular.js";
 	//Week Top10 Data
-	$http.get(	BaseURL + '/_service/data/category/matching/config.json'	)
+	$http.get(	BaseURL + '/service/data/category/matching/config.json'	)
 		 .success(function(data, status, headers, config){
 			 $scope.matching = data;
 		 });
@@ -87,14 +87,14 @@ angular.module('iReader.controllers', [])
 })
 .controller("categoryCtrl", function($scope, $http, $state) {
 	$http.defaults.headers.common["X-Custom-Header"] = "Angular.js";
-	$http.get(	BaseURL + '/_service/data/category/discovery/config.json'	)
+	$http.get(	BaseURL + '/service/data/category/discovery/config.json'	)
 		 .success(function(data, status, headers, config){
 			 $scope.category = data;
 		 });
 })
 .controller("categoryItemCtrl", function($scope, $http, $state) {
 	$http.defaults.headers.common["X-Custom-Header"] = "Angular.js";
-	$http.get(	BaseURL + '/_service/data/category/discovery/'+ $scope.category.categoryItem +'/config.json'	)
+	$http.get(	BaseURL + '/service/data/category/discovery/'+ $scope.category.categoryItem +'/config.json'	)
 		 .success(function(data, status, headers, config){
 			 $scope.categoryItems = data;
 		 });
@@ -134,17 +134,17 @@ angular.module('iReader.controllers', [])
 	
 	$http.defaults.headers.common["X-Custom-Header"] = "Angular.js";
 	//Week Top10 Data
-	$http.get(	BaseURL + '/_service/data/top_ranking/week.json'	)
+	$http.get(	BaseURL + '/service/data/top_ranking/week.json'	)
 		 .success(function(data, status, headers, config){
 			 $scope.weekTopRankingList = data;
 		 });
 	//Month Top10 Data
-	$http.get(	BaseURL + '/_service/data/top_ranking/month.json'	)
+	$http.get(	BaseURL + '/service/data/top_ranking/month.json'	)
 		 .success(function(data, status, headers, config){
 			 $scope.monthTopRankingList = data;
 		 });
 	//All Top10 Data
-	$http.get(	BaseURL + '/_service/data/top_ranking/all.json'	)
+	$http.get(	BaseURL + '/service/data/top_ranking/all.json'	)
 		 .success(function(data, status, headers, config){
 			 $scope.allTopRankingList = data;
 		 });
@@ -273,12 +273,12 @@ angular.module('iReader.controllers', [])
 	 
 	$http.defaults.headers.common["X-Custom-Header"] = "Angular.js";
 	//Advertising Item
-	$http.get(	BaseURL + '/_service/data/category/dayliy/advertising.json'	)
+	$http.get(	BaseURL + '/service/data/category/dayliy/advertising.json'	)
 		 .success(function(data, status, headers, config){
 			 $scope.data.advertisingList = data;
 	})
 	//News Item
-	$http.get(	BaseURL + '/_service/data/category/dayliy/posts.json'	)
+	$http.get(	BaseURL + '/service/data/category/dayliy/posts.json'	)
 		 .success(function(data, status, headers, config){
 			 $ionicLoading.hide();
 			 $scope.data.articleList = data;
@@ -293,12 +293,12 @@ angular.module('iReader.controllers', [])
 	 */
 	$scope.doRefresh = function() {
 		//Advertising Item
-		$http.get(	BaseURL + '/_service/data/category/dayliy/advertising.json'	)
+		$http.get(	BaseURL + '/service/data/category/dayliy/advertising.json'	)
 			 .success(function(data, status, headers, config){
 				 $scope.data.advertisingList = data;
 		})
 		//News Item
-		$http.get(	BaseURL + '/_service/data/category/dayliy/posts.json'	)
+		$http.get(	BaseURL + '/service/data/category/dayliy/posts.json'	)
 			 .success(function(data, status, headers, config){
 				 $scope.data.articleList = data;
 		})
@@ -322,12 +322,12 @@ angular.module('iReader.controllers', [])
 	
 	$http.defaults.headers.common["X-Custom-Header"] = "Angular.js";
 	// author info
-	$http.get(	BaseURL + '/_service/data/author/'+ $stateParams.authorID +'/info.json'	)
+	$http.get(	BaseURL + '/service/data/author/'+ $stateParams.authorID +'/info.json'	)
 		 .success(function(data, status, headers, config){
 			 $scope.authorInfo = data;
 	})
 	//auhot article
-	$http.get(	BaseURL + '/_service/data/author/'+ $stateParams.authorID +'/posts.json'	)
+	$http.get(	BaseURL + '/service/data/author/'+ $stateParams.authorID +'/posts.json'	)
 		 .success(function(data, status, headers, config){
 			 $scope.articleList = data;
 	})
@@ -340,12 +340,12 @@ angular.module('iReader.controllers', [])
 	 
 	$scope.doRefresh = function() {
 		// author info
-		$http.get(	BaseURL + '/_service/data/author/'+ $stateParams.authorID +'/info.json'	)
+		$http.get(	BaseURL + '/service/data/author/'+ $stateParams.authorID +'/info.json'	)
 			 .success(function(data, status, headers, config){
 				 $scope.authorInfo = data;
 		})
 		//auhot article
-		$http.get(	BaseURL + '/_service/data/author/'+ $stateParams.authorID +'/posts.json'	)
+		$http.get(	BaseURL + '/service/data/author/'+ $stateParams.authorID +'/posts.json'	)
 			 .success(function(data, status, headers, config){
 				 $scope.articleList = data;
 		})
@@ -381,12 +381,12 @@ angular.module('iReader.controllers', [])
 	$scope.authorID = $stateParams.authorID;
 	
 	// author info
-	$http.get(	BaseURL + '/_service/data/author/' + $stateParams.authorID + '/articles/' + currentPage + '.json'	)
+	$http.get(	BaseURL + '/service/data/author/' + $stateParams.authorID + '/articles/' + currentPage + '.json'	)
 		 .success(function(data, status, headers, config){
 			 $scope.article = data;
 	});
 	// Get the index page
-	$http.get(	BaseURL + '/_service/data/author/' + $stateParams.authorID + '/posts.json'	)
+	$http.get(	BaseURL + '/service/data/author/' + $stateParams.authorID + '/posts.json'	)
 		 .success(function(data, status, headers, config){
 			 maxPage = data[0].ID
 			 minPage = data[ data.length - 1 ].ID
@@ -464,17 +464,17 @@ angular.module('iReader.controllers', [])
 	
 	$scope.data = {};
 	//title
-	$http.get(	BaseURL + '/_service/data/category/discovery/'+ $stateParams.categoryItem + '/'	+ $stateParams.categoryKey + '/category_name.json'	)
+	$http.get(	BaseURL + '/service/data/category/discovery/'+ $stateParams.categoryItem + '/'	+ $stateParams.categoryKey + '/category_name.json'	)
 		 .success(function(data, status, headers, config){
 			 $scope.categoryTitle = data;
 	})
 	//advertising
-	$http.get(	BaseURL + '/_service/data/category/discovery/'+ $stateParams.categoryItem + '/'	+ $stateParams.categoryKey + '/advertising.json'	)
+	$http.get(	BaseURL + '/service/data/category/discovery/'+ $stateParams.categoryItem + '/'	+ $stateParams.categoryKey + '/advertising.json'	)
 		 .success(function(data, status, headers, config){
 			 $scope.data.advertisingList = data;
 	})
 	//Posts
-	$http.get(	BaseURL + '/_service/data/category/discovery/'+ $stateParams.categoryItem + '/'	+ $stateParams.categoryKey + '/posts.json'	)
+	$http.get(	BaseURL + '/service/data/category/discovery/'+ $stateParams.categoryItem + '/'	+ $stateParams.categoryKey + '/posts.json'	)
 		 .success(function(data, status, headers, config){
 			 $scope.data.articleList = data;
 	})
@@ -490,17 +490,17 @@ angular.module('iReader.controllers', [])
 	 
 	$scope.doRefresh = function() {
 		//title
-		$http.get(	BaseURL + '/_service/data/category/discovery/'+ $stateParams.categoryItem + '/'	+ $stateParams.categoryKey + '/category_name.json'	)
+		$http.get(	BaseURL + '/service/data/category/discovery/'+ $stateParams.categoryItem + '/'	+ $stateParams.categoryKey + '/category_name.json'	)
 			 .success(function(data, status, headers, config){
 				 $scope.categoryTitle = data;
 		})
 		//advertising
-		$http.get(	BaseURL + '/_service/data/category/discovery/'+ $stateParams.categoryItem + '/'	+ $stateParams.categoryKey + '/advertising.json'	)
+		$http.get(	BaseURL + '/service/data/category/discovery/'+ $stateParams.categoryItem + '/'	+ $stateParams.categoryKey + '/advertising.json'	)
 			 .success(function(data, status, headers, config){
 				 $scope.data.advertisingList = data;
 		})
 		//Posts
-		$http.get(	BaseURL + '/_service/data/category/discovery/'+ $stateParams.categoryItem + '/'	+ $stateParams.categoryKey + '/posts.json'	)
+		$http.get(	BaseURL + '/service/data/category/discovery/'+ $stateParams.categoryItem + '/'	+ $stateParams.categoryKey + '/posts.json'	)
 			 .success(function(data, status, headers, config){
 				 $scope.data.articleList = data;
 		})
@@ -523,7 +523,7 @@ angular.module('iReader.controllers', [])
  *-------------------------------------------------------------------------------------!*/
 .controller('addSubscribeCtrl', function($scope, $state, $http) {
 	$http.defaults.headers.common["X-Custom-Header"] = "Angular.js";
-	$http.get(	BaseURL + '/_service/data/author/author.json'	)
+	$http.get(	BaseURL + '/service/data/author/author.json'	)
 		 .success(function(data, status, headers, config){
 			 $scope.authorList = data;
 	});
@@ -575,14 +575,14 @@ angular.module('iReader.controllers', [])
 	
 	//All Posts Data
 	$http.defaults.headers.common["X-Custom-Header"] = "Angular.js";
-	$http.get(	BaseURL + '/_service/data/all/posts.json'	)
+	$http.get(	BaseURL + '/service/data/all/posts.json'	)
 		 .success(function(data, status, headers, config){
 			 $scope.Allposts = data;
 	});
 	
 	//All Shop Posts Data
 	$http.defaults.headers.common["X-Custom-Header"] = "Angular.js";
-	$http.get(	BaseURL + '/_service/data/all/posts.shop.json'	)
+	$http.get(	BaseURL + '/service/data/all/posts.shop.json'	)
 		 .success(function(data, status, headers, config){
 			 $scope.shopPosts = data;
 	});
@@ -599,17 +599,17 @@ angular.module('iReader.controllers', [])
 	
 	$scope.data = {};
 	//title
-	$http.get(	BaseURL + '/_service/data/category/magzine/'+ $stateParams.categoryKey + '/category_name.json'	)
+	$http.get(	BaseURL + '/service/data/category/magzine/'+ $stateParams.categoryKey + '/category_name.json'	)
 		 .success(function(data, status, headers, config){
 			 $scope.categoryTitle = data;
 	})
 	//advertising
-	$http.get(	BaseURL + '/_service/data/category/magzine/'	+ $stateParams.categoryKey + '/advertising.json'	)
+	$http.get(	BaseURL + '/service/data/category/magzine/'	+ $stateParams.categoryKey + '/advertising.json'	)
 		 .success(function(data, status, headers, config){
 			 $scope.data.advertisingList = data;
 	})
 	//Posts
-	$http.get(	BaseURL + '/_service/data/category/magzine/'	+ $stateParams.categoryKey + '/posts.json'	)
+	$http.get(	BaseURL + '/service/data/category/magzine/'	+ $stateParams.categoryKey + '/posts.json'	)
 		 .success(function(data, status, headers, config){
 			 $scope.data.articleList = data;
 	})
@@ -625,17 +625,17 @@ angular.module('iReader.controllers', [])
 	 
 	$scope.doRefresh = function() {
 		//title
-		$http.get(	BaseURL + '/_service/data/category/magzine/'+ $stateParams.categoryKey + '/category_name.json'	)
+		$http.get(	BaseURL + '/service/data/category/magzine/'+ $stateParams.categoryKey + '/category_name.json'	)
 			 .success(function(data, status, headers, config){
 				 $scope.categoryTitle = data;
 		})
 		//advertising
-		$http.get(	BaseURL + '/_service/data/category/magzine/'	+ $stateParams.categoryKey + '/advertising.json'	)
+		$http.get(	BaseURL + '/service/data/category/magzine/'	+ $stateParams.categoryKey + '/advertising.json'	)
 			 .success(function(data, status, headers, config){
 				 $scope.data.advertisingList = data;
 		})
 		//Posts
-		$http.get(	BaseURL + '/_service/data/category/magzine/'	+ $stateParams.categoryKey + '/posts.json'	)
+		$http.get(	BaseURL + '/service/data/category/magzine/'	+ $stateParams.categoryKey + '/posts.json'	)
 			 .success(function(data, status, headers, config){
 				 $scope.data.articleList = data;
 		})
@@ -661,17 +661,17 @@ angular.module('iReader.controllers', [])
 	
 	$scope.data = {};
 	//title
-	$http.get(	BaseURL + '/_service/data/category/matching/'+ $stateParams.categoryKey + '/category_name.json'	)
+	$http.get(	BaseURL + '/service/data/category/matching/'+ $stateParams.categoryKey + '/category_name.json'	)
 		 .success(function(data, status, headers, config){
 			 $scope.categoryTitle = data;
 	})
 	//advertising
-	$http.get(	BaseURL + '/_service/data/category/matching/'	+ $stateParams.categoryKey + '/advertising.json'	)
+	$http.get(	BaseURL + '/service/data/category/matching/'	+ $stateParams.categoryKey + '/advertising.json'	)
 		 .success(function(data, status, headers, config){
 			 $scope.data.advertisingList = data;
 	})
 	//Posts
-	$http.get(	BaseURL + '/_service/data/category/matching/'	+ $stateParams.categoryKey + '/posts.json'	)
+	$http.get(	BaseURL + '/service/data/category/matching/'	+ $stateParams.categoryKey + '/posts.json'	)
 		 .success(function(data, status, headers, config){
 			 $scope.data.articleList = data;
 	})
@@ -687,17 +687,17 @@ angular.module('iReader.controllers', [])
 	 
 	$scope.doRefresh = function() {
 		//title
-		$http.get(	BaseURL + '/_service/data/category/matching/'+ $stateParams.categoryKey + '/category_name.json'	)
+		$http.get(	BaseURL + '/service/data/category/matching/'+ $stateParams.categoryKey + '/category_name.json'	)
 			 .success(function(data, status, headers, config){
 				 $scope.categoryTitle = data;
 		})
 		//advertising
-		$http.get(	BaseURL + '/_service/data/category/matching/'	+ $stateParams.categoryKey + '/advertising.json'	)
+		$http.get(	BaseURL + '/service/data/category/matching/'	+ $stateParams.categoryKey + '/advertising.json'	)
 			 .success(function(data, status, headers, config){
 				 $scope.data.advertisingList = data;
 		})
 		//Posts
-		$http.get(	BaseURL + '/_service/data/category/matching/'	+ $stateParams.categoryKey + '/posts.json'	)
+		$http.get(	BaseURL + '/service/data/category/matching/'	+ $stateParams.categoryKey + '/posts.json'	)
 			 .success(function(data, status, headers, config){
 				 $scope.data.articleList = data;
 		})
