@@ -7,7 +7,7 @@
 
 
 // BaseURL
-BaseURL = ""; /*http://118.26.146.76/ireader/_service
+BaseURL = ""; /*http://118.26.146.76/ireader/_service8*/
 
 angular.module('iReader.services', [])
 /*!
