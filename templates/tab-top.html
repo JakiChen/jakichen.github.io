@@ -1,0 +1,57 @@
+
+<ion-view title="排行榜">
+
+    <!--tab-control-->
+    <ul class="tab-control fixed">
+        <li ng-repeat="tab in tabs"><a ng-class="{active:isActiveTab(tab.url)}" ng-click="onClickTab(tab)">{{tab.title}}</a></li>
+    </ul>
+    <!--/tab-control-->
+
+    <ion-content class="has-header">
+        <div ng-include="currentTab" style="padding-top:37px"></div>
+    </ion-content>
+    
+    <!--templeate-->
+
+    <script type="text/ng-template" id="templates/weekTopRanking.tpl.html">
+         <ul class="author-list">
+            <li ng-repeat="topItem in weekTopRankingList | orderBy: '-ranking' ">
+                <span class="avatar"><img ng-src="{{topItem.avtarHrf}}"></span>
+                <span class="right">
+                    <span class="author">{{topItem.name}}</span>
+                    <span class="basic-introl">{{topItem.introl}}</span>
+                </span>
+                <a href="#/author/{{topItem.ID}}" class="detail">详情</a>
+            </li>
+        </ul>
+     </script>
+     
+     <script type="text/ng-template" id="templates/monthTopRanking.tpl.html">
+         <ul class="author-list">
+            <li ng-repeat="topItem in monthTopRankingList | orderBy: '-ranking' ">
+                <span class="avatar"><img ng-src="{{topItem.avtarHrf}}"></span>
+                <span class="right">
+                    <span class="author">{{topItem.name}}</span>
+                    <span class="basic-introl">{{topItem.introl}}</span>
+                </span>
+                <a href="#/author/{{topItem.ID}}" class="detail">详情</a>
+            </li>
+        </ul>
+     </script>
+     
+     <script type="text/ng-template" id="templates/allTopRanking.tpl.html">
+         <ul class="author-list">
+            <li ng-repeat="topItem in allTopRankingList | orderBy: '-ranking' ">
+                <span class="avatar"><img ng-src="{{topItem.avtarHrf}}"></span>
+                <span class="right">
+                    <span class="author">{{topItem.name}}</span>
+                    <span class="basic-introl">{{topItem.introl}}</span>
+                </span>
+                <a href="#/author/{{topItem.ID}}" class="detail">详情</a>
+            </li>
+        </ul>
+     </script>
+     
+    <!--/templeate-->
+    
+</ion-view>

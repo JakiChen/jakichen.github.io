@@ -1,0 +1,35 @@
+<ion-view title="添加订阅">
+    
+    <ion-nav-buttons side="left">
+    	<button class="button button-clear" onclick="window.history.go(-1)">
+    		<span class="icon-button nav-icon-cancel">返回</span>
+        </button>
+    </ion-nav-buttons>
+    
+    <ion-content>
+            <div class="search-box">
+                <input type="search" placeholder="搜索公众号 内容关键字..." ng-model="query" style="font-size:12px; margin-left:5px;">
+                <div class="btn-clear-box hide">取消</div>
+            </div>
+        
+            <div class="search-result border-bottom">推荐订阅</div>
+        
+            <!--author-list-->
+            <ul class="author-list">
+                <li ng-repeat="author in authorList | filter: query">
+                    <span class="avatar"><img ng-src="{{author.avtarHrf}}"></span>
+                    <span class="right">
+                        <span class="author">{{author.name}}</span>
+                        <span class="basic-introl">{{author.introl}}</span>
+                    </span>
+
+                    <label class="check-box add">
+                        <input type="checkbox" id="{{author.ID}}">
+                    </label>
+                </li>
+            </ul>
+            <!--/author-list-->
+
+    </ion-content>
+
+</ion-view>

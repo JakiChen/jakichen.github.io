@@ -1,0 +1,46 @@
+[
+    {   
+        "ID"            :   "1",
+        "magzName"      :   "UED",
+        "magzCover"     :   "images/test.jpg",
+        "categoryKey"   :   "UED",
+        "articleNumber" :   "256"
+    },
+    {   
+        "ID"            :   "2",
+        "magzName"      :   "想法",
+        "magzCover"     :   "images/think.jpg",
+        "categoryKey"   :   "think",
+        "articleNumber" :   "1256"
+    },
+    {   
+        "ID"            :   "3",
+        "magzName"      :   "每日一笑",
+        "magzCover"     :   "images/humor.jpg",
+        "categoryKey"   :   "humor",
+        "articleNumber" :   "423"
+    },
+    {   
+        "ID"            :   "4",
+        "magzName"      :   "程序员", 
+        "magzCover"     :   "images/developer.jpg",
+        "categoryKey"   :   "developer",
+        "articleNumber" :   "76"
+    },
+    {   
+        "ID"            :   "5",
+        "magzName"      :   "人文·历史",
+        "author"        :   "文墨",
+        "magzCover"     :   "images/culture.jpg",
+        "categoryKey"   :   "culture",
+        "articleNumber" :   "5"
+    },
+    {   
+        "ID"            :   "6",
+        "magzName"      :   "娱乐", 
+        "author"        :   "新娱乐在线",
+        "magzCover"     :   "images/test.jpg",
+        "categoryKey"   :   "fun",
+        "articleNumber" :   "6"
+    }
+]

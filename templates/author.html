@@ -1,0 +1,57 @@
+<ion-view title="详情">
+
+    <ion-nav-buttons side="left">
+    	<button class="button button-clear" onclick="window.history.go(-1)">
+    		<span class="icon-button nav-icon-back">返回</span>
+        </button>
+    </ion-nav-buttons>
+    
+    <ion-nav-buttons side="right">
+        <a href="weixin://addfriend/{{authorInfo.ID}}" class="custom-right-button">关注</a>
+    </ion-nav-buttons>
+    
+    <ion-content class="gray-bg" >
+        
+        <ion-refresher on-refresh="doRefresh()"
+                       pulling-text="下拉刷新..."
+                       refreshing-text="加载中!"
+                       refreshing-icon="ion-loading-a">
+        </ion-refresher >
+        
+        <!--banner-container-->
+        <div class="banner-container height-auto">
+            <ul class="author-info">
+                <li class="author-avantar"><img ng-src="{{authorInfo.avtarHrf}}"></li>
+                <li class="author-name">{{authorInfo.name}}</li>
+                <li class="intro-tag">
+                    <span class="star-leve">推荐:&nbsp;{{authorInfo.sugStar}}&nbsp;星</span>&nbsp;|&nbsp;<span class="collecion-number">{{authorInfo.fans}}</span>&nbsp;订阅
+                </li>
+                <li class="introl">{{authorInfo.introl}}</li>
+            </ul>
+            <ul class="form-control">
+                <li class="left"><a href="#" class="vote">评级</a></li>
+                <li class="right"><button  class="btn-add-collection"><span class="plus-symbol">添加订阅</span></button></li>
+            </ul>	
+        </div>
+        <!--/banner-container-->
+        
+        <ul class="article-item-group">
+            <h2>{{authorInfo.articleNumber}} 篇文章</h2>
+            <li ng-repeat="artilce in articleList | orderBy: '-pubDate' ">
+                <div class="article-pic">
+                	<div class="relative">
+                		<img ng-src="{{artilce.thumbnail}}">
+                    </div>
+                </div>
+                <div class="article-title">{{artilce.title}}</div>
+                <div class="article-author-cont">
+                    <span class="author">{{authorInfo.name}}</span>&nbsp;·&nbsp;<span class="pub-date">{{artilce.pubDate}}</span>
+                </div>
+                <a href="#/author/{{authorInfo.ID}}/reports/{{artilce.ID}}" class="detail">详情</a>
+            </li>
+        </ul>
+        <div class="loading-more">加载更多</div>
+    </ion-content>
+
+    
+</ion-view>

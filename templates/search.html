@@ -1,0 +1,81 @@
+
+<ion-view title="{{myTitle}}">
+
+	<ion-nav-buttons side="left">
+    		<span class="icon-button nav-icon-search-gray" style="margin:5px 0 0 3px;">搜索</span>
+    </ion-nav-buttons>
+	
+    <ion-nav-buttons side="left">
+    	<input type="search" placeholder="搜索 公众号 文章" ng-model="query" id="search" style="margin-left:10px;">
+    </ion-nav-buttons>
+    
+    <ion-nav-buttons side="right">
+        <a class="custom-right-button" onclick="window.history.go(-1)">取消</a>
+    </ion-nav-buttons>
+
+	<!--tabc-control-->
+    <ul class="tab-control fixed" style="background-color:#f7f7f7;">
+        <li ng-repeat="tab in tabs"><a ng-class="{active:isActiveTab(tab.url)}" ng-click="onClickTab(tab)">{{tab.title}}</a></li>
+    </ul>
+    <!--/tabc-control-->
+    
+	<ion-content class="gray-bg">
+        <div ng-include="currentTab" style="padding-top:37px"></div>
+	</ion-content>
+    
+    <script type="text/ng-template" id="templates/allPosts.tpl.html">
+		<ul class="article-item-group">
+			<h2>{{Allposts.length}} 推荐</h2>
+			<li ng-repeat = "Allposts in Allposts | orderBy:'-pubDate' | filter: query">
+				<div class="article-pic">
+					<div class="relative">
+						<img ng-src="{{Allposts.thumbnail}}">
+					</div>
+				</div>
+				<div class="article-title">{{Allposts.title}}</div>
+				<div class="article-author-cont">
+					<span class="author">{{Allposts.author}}</span>&nbsp;·&nbsp;<span class="pub-date">{{Allposts.pubDate}}</span>
+				</div>
+				<a href="#/author/{{Allposts.authorID}}/reports/{{Allposts.ID}}" class="detail">详情</a>
+			</li>
+		</ul>
+	</script>
+    
+    <script type="text/ng-template" id="templates/myReadingList.tpl.html">
+		<ul class="article-item-group">
+			<h2>{{Allposts.length}} 推荐</h2>
+			<li ng-repeat = "Allposts in Allposts | orderBy:'-pubDate' | filter: query | filter: '城市画报' ">
+				<div class="article-pic">
+					<div class="relative">
+						<img ng-src="{{Allposts.thumbnail}}">
+					</div>
+				</div>
+				<div class="article-title">{{Allposts.title}}</div>
+				<div class="article-author-cont">
+					<span class="author">{{Allposts.author}}</span>&nbsp;·&nbsp;<span class="pub-date">{{Allposts.pubDate}}</span>
+				</div>
+				<a href="#/author/{{Allposts.authorID}}/reports/{{Allposts.ID}}" class="detail">详情</a>
+			</li>
+		</ul>
+	</script>
+    
+    <script type="text/ng-template" id="templates/weiShop.tpl.html">
+		<ul class="article-item-group">
+			<h2>{{shopPosts.length}} 推荐</h2>
+			<li ng-repeat = "shopPosts in shopPosts | orderBy:'-pubDate' | filter: query ">
+				<div class="article-pic">
+					<div class="relative">
+						<img ng-src="{{shopPosts.thumbnail}}">
+					</div>
+				</div>
+				<div class="article-title">{{shopPosts.title}}</div>
+				<div class="article-author-cont">
+					<span class="author">{{shopPosts.author}}</span>&nbsp;·&nbsp;<span class="pub-date">{{shopPosts.pubDate}}</span>
+				</div>
+				<a href="#/author/{{shopPosts.authorID}}/reports/{{shopPosts.ID}}" class="detail">详情</a>
+			</li>
+		</ul>
+	</script>
+    
+    
+</ion-view>

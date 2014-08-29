@@ -1,0 +1,41 @@
+<ion-view title="{{myTitle}}">
+
+    <ion-nav-buttons side="left">
+    	<button class="button button-clear" nav-clear ui-sref="tab.discovery-category">
+    		<span class="icon-button nav-icon-category">分类</span>
+        </button>
+    </ion-nav-buttons>
+    
+    <ion-nav-buttons side="right">
+    	<button class="button button-clear" ui-sref="search">
+    		<span class="icon-button nav-icon-search-gray">搜索</span>
+        </button>
+    </ion-nav-buttons>
+    
+    
+    <ion-content class="gray-bg">
+    	<ul class="widget-boner padding-30px">
+            <li class="title">匹配·集</li>
+            <li class="sub-title">简单几步，为你匹配出专属阅读集<a class="icon-start-travel">开启体验</a></li>
+        </ul>
+    	
+       <!--collection-item-group-->
+        <ul class="collection-item-group match-item">
+        
+            <li class="list-item" ng-repeat = "matching in matching | orderBy: 'ID'">
+                <ol class="wihte-pannel">
+                    <li class="image"><a href="#/collection/{{matching.categoryKey}}"><img ng-src="{{matching.magzCover}}"></a></li>
+                    <li class="title">{{matching.magzName}}</li>
+                    <li class="sub-title">{{matching.articleNumber}}<span>匹配集</span></li>
+                    <li class="bottom-control">
+                        <a href="#"><span class="plus-symbol">添加订阅</span></a>
+                    </li>
+                </ol>
+            </li>
+      
+        </ul>
+        <!--/collection-item-group-->
+        <br style="clear:both">
+    </ion-content>
+    
+</ion-view>

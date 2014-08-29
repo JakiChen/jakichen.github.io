@@ -1,0 +1,53 @@
+<ion-view title="{{myTitle}}">
+    
+   <ion-nav-buttons side="left">
+    	<button class="button button-clear" ng-click="goBack()">
+    		<span class="icon-button nav-icon-back">返回</span>
+        </button>
+    </ion-nav-buttons>
+    
+    <ion-nav-buttons side="right">
+        	<a href="weixin://addfriend/{{authorID}}" class="custom-right-button" >关注</a>
+    </ion-nav-buttons>
+    
+    <ion-content on-swipe-left="preArticle()" on-swipe-right="nextArticle()" class="has-header">
+
+        <!--article-cont-->
+        <div class="article-cont">
+ 
+             <ul class="article-cont-banner">
+                <li class="imge"><img ng-src="{{article.articleThumbnail}}"></li>
+                <li class="title"><h2 style="font-size:24px">{{article.title}}</h2></li>
+            </ul>
+
+            <div class="article-contents">
+            	<h1 class="title">{{article.title}}</h1>
+                <b class="author-cont">
+                	<span class="author-avtar"><img ng-src="{{article.authorAvatarHrf}}"></span>
+                	<span class="author-info">
+                    	<span style="color:#727272">{{article.author}}</span>
+                        &nbsp;·&nbsp;{{article.pubDate}}&nbsp;｜&nbsp;
+                        <a href="{{article.articleSource}}" target="_blank">阅读原文</a>
+                    </span>
+                 </b>
+                    
+                <div ng-bind-html="article.contents | to_trusted"></div>
+            </div>
+            
+            <div class="author-introl" style="border-top:solid 1px #D0D0D0; margin:10px 15px;">
+            	<span style="color:#C4C4C4; font-size:12px; line-height:36px;">{{article.author}} | 发表</span>
+            	<ul class="author-info">
+                    <li class="author-avantar"><img ng-src="{{article.authorAvatarHrf}}"></li>
+                    <li class="author-name">{{article.author}}</li>
+                    <li class="introl">{{article.authorInfo}}</li>
+                    <li class="introl"><a href="#/author/{{article.authorID}}">往期文章→</a></li>
+                </ul>
+                <br style="clear:both">
+            </div>
+        </div>
+        <!--/article-cont--> 
+        
+    </ion-content>
+
+    
+</ion-view>

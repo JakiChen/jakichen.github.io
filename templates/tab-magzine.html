@@ -1,0 +1,35 @@
+<ion-view title="专题特刊">
+	<ion-nav-buttons>
+        <!--nav-bar-->
+        <!--<ul class="custom-nav-bar">
+            <li class="left"><a href="#">&nbsp;</a></li>
+            <li class="center">
+                <h1>专题特刊</h1>
+            </li>
+            <li class="right"><a href="#">创建</a></li>
+        </ul>-->
+        <!--/nav-bar-->
+	</ion-nav-buttons>
+    
+    <ion-content class="gray-bg">
+    	<!--collection-item-group-->
+        <ul class="collection-item-group">
+        
+            <li class="list-item" ng-repeat = "magzine in magzine | orderBy: 'ID' ">
+                <ol class="wihte-pannel">
+                    <li class="image"><a href="#/magzine/{{magzine.categoryKey}}"><img ng-src="{{magzine.magzCover}}"></a></li>
+                    <li class="title">{{magzine.magzName}}</li>
+                    <li class="sub-title">{{magzine.author}}<span>编</span></li>
+                    <li class="bottom-control">
+                        <span class="artilce-number">{{magzine.articleNumber}}篇</span>
+                        <span><a class="share">分享</a></span>
+                    </li>
+                </ol>
+            </li>
+            
+        </ul>
+        <!--/collection-item-group-->
+        <br style="clear:both">
+    </ion-content>
+    
+</ion-view>

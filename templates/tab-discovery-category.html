@@ -1,0 +1,27 @@
+<ion-view title="{{myTitle}}">
+
+	<ion-nav-buttons side="left">
+    	<button class="button button-clear" nav-clear ui-sref="tab.discovery-category">
+    		<span class="icon-button nav-icon-category-active">分类</span>
+        </button>
+    </ion-nav-buttons>
+    
+    <ion-nav-buttons side="right">
+    	<button class="button button-clear" ui-sref="search">
+    		<span class="icon-button nav-icon-search-gray">搜索</span>
+        </button>
+    </ion-nav-buttons>
+    
+    <ion-content ng-controller="categoryCtrl">
+    	<ul ng-controller="categoryItemCtrl" ng-repeat="category in category" class="category-item {{category.className}}">
+            <h2>{{category.categoryName}}<span>{{category.categoryNumber}}分类</span></h2>
+            <li ng-repeat="item in categoryItems">
+            	<a href="#/category/{{category.categoryItem}}/id/{{item.categoryKey}}" class="icon-category-{{item.categoryKey}}">{{item.categoryName}}</a>
+            </li>
+            <li class="more" ng-click="showMore()"><a>更多</a></li>
+        </ul>
+        <!--/collection-item-group-->
+        <br style="clear:both">
+    </ion-content>
+    
+</ion-view>

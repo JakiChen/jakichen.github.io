@@ -1,0 +1,101 @@
+<ion-view title="好友动态">
+
+    <ion-nav-buttons side="left">
+    	<button class="button button-clear" onclick="window.history.go(-1)">
+    		<span class="icon-button nav-icon-back">返回</span>
+        </button>
+    </ion-nav-buttons>
+    
+    <ion-content>
+    
+    	<ion-refresher on-refresh="doRefresh()"
+                       pulling-text="下拉刷新..."
+                       refreshing-text="加载中!"
+                       refreshing-icon="ion-loading-a">
+        </ion-refresher >
+    
+    	<div class="gray-bg padding-30px">
+            <ul class="widget-boner">
+                <li class="avantar"><a href="#/member"><img src="images/avatar-pic.jpg"></a></li>
+                <li class="title">Babi<span class="icon-sns-male">男</span></li>
+                <li class="sub-title">我已习惯45°度角仰望天际~</li>
+                <li class="info"><span class="follow">32</span>关注&nbsp;|&nbsp;<span class="fans">72</span>粉丝</li>
+            </ul>
+        </div>
+        
+        
+        <!--sns-cont-->
+        <div class="sns-cont">
+        	<!--tabc-control-->
+            <ul class="tab-control">
+                <li ng-repeat="tab in tabs"><a ng-class="{active:isActiveTab(tab.url)}" ng-click="onClickTab(tab)">{{tab.title}}</a></li>
+            </ul>
+            <!--/tabc-control-->
+            
+            <div ng-include="currentTab"></div>
+            
+            <ul class="message-item">
+                <li class="message-list-item">
+                    <div class="avatar"><a href="#/member" ><img src="images/avatar-pic.jpg"></a></div>
+                    <div class="name">
+                        <span class="name-title">Babi<span class="action">点评</span></span>
+                        <span class="cont-tag">[文章]</span>
+                    </div>
+                    
+                    <!--discus-cont-->
+                    <ol class="discus-cont">
+                        <li class="pic"><img src="images/shop/shop-test-three.jpg"></li>
+                        <li class="title">太平鸟男装2014新款 男士时尚短袖衬衫修身</li>
+                        <li class="source">来源<span>&nbsp;·&nbsp;</span>城市画报</li>
+                        <li class="link"><a >详情</a>
+                    </ol>
+                    <!--/discus-cont-->
+                    
+                    <div class="opinion">穿起来很带感 :-D</div>
+                </li>
+                
+                <li class="message-list-item">
+                    <div class="avatar"><a href="#/member" ><img src="images/avatar-pic.jpg"></a></div>
+                    <div class="name">
+                        <span class="name-title">Babi<span class="action">点评</span></span>
+                        <span class="cont-tag">[宝贝]</span>
+                    </div>
+                    
+                    <!--discus-cont-->
+                    <ol class="discus-cont">
+                        <li class="pic"><img src="images/shop/shop-test-three.jpg"></li>
+                        <li class="title">太平鸟男装2014新款 男士时尚短袖衬衫修身</li>
+                        <li class="price">¥ 179.00</li>
+                        <li class="source">来源<span>&nbsp;·&nbsp;</span>城市画报</li>
+                        <li class="link"><a>详情</a>
+                    </ol>
+                    <!--/discus-cont-->
+                    
+                    <div class="opinion">穿起来很带感 :-D</div>
+                </li>
+                
+                <li class="message-list-item">
+                    <div class="avatar"><a href="#/member" ><img src="images/avatar-pic.jpg"></a></div>
+                    <div class="name">
+                        <span class="name-title">Babi<span class="action">点评</span></span>
+                        <span class="cont-tag">[文章]</span>
+                    </div>
+                    
+                    <!--discus-cont-->
+                    <ol class="discus-cont">
+                        <li class="pic"><img src="images/shop/shop-test-three.jpg"></li>
+                        <li class="title">太平鸟男装2014新款 男士时尚短袖衬衫修身</li>
+                        <li class="source">来源<span>&nbsp;·&nbsp;</span>城市画报</li>
+                        <li class="link"><a>详情</a>
+                    </ol>
+                    <!--/discus-cont-->
+                    
+                    <div class="opinion">穿起来很带感 :-D</div>
+                </li>
+            </ul>
+        </div>
+        <!--/sns-cont-->
+        
+    </ion-content>
+    
+</ion-view>

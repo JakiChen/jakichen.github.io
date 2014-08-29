@@ -1,0 +1,50 @@
+[
+    {   
+        "ID"            :   "1",
+        "magzName"      :   "UED",
+        "author"        :   "阿里",
+        "magzCover"     :   "images/test.jpg",
+        "categoryKey"   :   "UED",
+        "articleNumber" :   "5"
+    },
+    {   
+        "ID"            :   "2",
+        "magzName"      :   "创意·科技",
+        "author"        :   "先看看",
+        "magzCover"     :   "images/science.jpg",
+        "categoryKey"   :   "science",
+        "articleNumber" :   "6"
+    },
+    {   
+        "ID"            :   "3",
+        "magzName"      :   "休闲·生活",
+        "author"        :   "生活画报",
+        "magzCover"     :   "images/life.jpg",
+        "categoryKey"   :   "life",
+        "articleNumber" :   "5"
+    },
+    {   
+        "ID"            :   "4",
+        "magzName"      :   "人文·历史",
+        "author"        :   "文墨",
+        "magzCover"     :   "images/culture.jpg",
+        "categoryKey"   :   "culture",
+        "articleNumber" :   "5"
+    },
+    {   
+        "ID"            :   "5",
+        "magzName"      :   "财经", 
+        "author"        :   "财经郎眼",
+        "magzCover"     :   "images/financial.jpg",
+        "categoryKey"   :   "financial",
+        "articleNumber" :   "6"
+    },
+    {   
+        "ID"            :   "6",
+        "magzName"      :   "娱乐", 
+        "author"        :   "新娱乐在线",
+        "magzCover"     :   "images/test.jpg",
+        "categoryKey"   :   "fun",
+        "articleNumber" :   "6"
+    }
+]
