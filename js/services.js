@@ -7,7 +7,7 @@
 
 
 // BaseURL
-BaseURL = "https://github.com/JakiChen/jakichen.github.io/blob/master/";
+BaseURL = "";
 
 angular.module('iReader.services', [])
 /*!
