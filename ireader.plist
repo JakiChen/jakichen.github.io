@@ -19,7 +19,7 @@
                    <key>needs-shine</key>
                    <true/>
                    <key>url</key>
-                   <string>http://jakichen.github.io/img/icon@02x.png</string>
+                   <string>http://jakichen.github.io/img/icon@2x.png</string>
                </dict>
 	       <dict>
                    <key>kind</key>
@@ -27,7 +27,7 @@
                    <key>needs-shine</key>
                    <true/>
                    <key>url</key>
-                   <string>http://jakichen.github.io/img/icon@02x.png</string>
+                   <string>http://jakichen.github.io/img/icon@2x.png</string>
                </dict>
            </array><key>metadata</key>
            <dict>
